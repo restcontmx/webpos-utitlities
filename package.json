@@ -1,0 +1,61 @@
+{
+  "name": "webpos-utilities",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm install && electron main",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "files": [
+    "**/*",
+    "dist/*"
+  ],
+  "build": {
+    "appId": "123",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^2.4.1",
+    "express": "^4.16.3",
+    "getmac": "^1.4.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "codelyzer": "~3.1.1",
+    "jasmine-core": "~2.6.2",
+    "electron": "1.8.4",
+    "electron-builder": "20.5.1",
+    "electron-squirrel-startup": "1.0.0",
+    "electron-winstaller": "2.6.4",
+    "ts-node": "~3.2.0",
+    "tslint": "~5.3.2",
+    "typescript": "~2.3.3"
+  }
+}
